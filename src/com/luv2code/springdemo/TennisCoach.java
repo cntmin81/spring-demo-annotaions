@@ -5,12 +5,22 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
-	
+
 	FortuneService fortuneService;
-	
+
+	public TennisCoach() {
+		System.out.println("TennisCoach: constructor");
+	}
+
+//	@Autowired
+//	public TennisCoach(FortuneService fortuneService) {
+//		super();
+//		this.fortuneService = fortuneService;
+//	}
+
 	@Autowired
-	public TennisCoach(FortuneService fortuneService) {
-		super();
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("TennisCoach: setter method");
 		this.fortuneService = fortuneService;
 	}
 
